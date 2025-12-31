@@ -14,9 +14,21 @@ export function Footer() {
     <footer className="border-t">
       <div className="container flex flex-col items-center gap-3 py-4 text-xs text-muted-foreground sm:flex-row sm:justify-between sm:h-10 sm:py-0 sm:gap-4">
         <span className="flex items-center gap-1.5">
-          <Image src="/logo.svg" alt="" width={14} height={14} className="dark:invert" />
-          <Link href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">CC0</Link>
-          {" "}{new Date().getFullYear()} {branding.name}
+          {branding.useCloneBranding ? (
+            <>
+              <Image src={branding.logo || "/logo.svg"} alt="" width={14} height={14} className={branding.logo === "/ntq-logo.png" ? "" : "dark:invert"} />
+              <Link href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">CC0</Link>
+              {" "}{new Date().getFullYear()} {branding.name}
+              {" • Based on "}
+              <Link href="https://prompts.chat" target="_blank" rel="noopener noreferrer" className="hover:text-foreground underline">prompts.chat</Link>
+            </>
+          ) : (
+            <>
+              <Image src="/logo.svg" alt="" width={14} height={14} className="dark:invert" />
+              <Link href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">CC0</Link>
+              {" "}{new Date().getFullYear()} {branding.name}
+            </>
+          )}
         </span>
         <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
           {!branding.useCloneBranding && (

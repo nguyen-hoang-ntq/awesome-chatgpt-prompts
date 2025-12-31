@@ -1,16 +1,16 @@
 import { defineConfig } from "@/lib/config";
 
 // Set to true to use clone branding (hide prompts.chat repo branding)
-const useCloneBranding = false;
+const useCloneBranding = true;
 
 export default defineConfig({
   // Branding - customize for white-label
   branding: {
-    name: "prompts.chat",
-    logo: "/logo.svg",
-    logoDark: "/logo-dark.svg",
-    favicon: "/logo.svg",
-    description: "Collect, organize, and share AI prompts",
+    name: "NTQ AI Prompts",
+    logo: "/ntq-logo.png",
+    logoDark: "/ntq-logo.png",
+    favicon: "/ntq-logo.png",
+    description: "Internal AI Prompts Library for NTQ Team",
   },
 
   // Theme - design system configuration
